@@ -1,48 +1,81 @@
 # yaml-configuration-template-preliminary-detection-file
 仅是新手自己练手使用
-# Bucket Access Checker
+# YAML模板生成器
 
-Bucket Access Checker 是一个用于检测百度云存储（Baidu Cloud Storage，简称 BOS）中指定 Bucket 的访问权限的桌面应用程序。
+该项目提供一个简单的界面，用于生成YAML模板。您可以选择不同的参数，并在文本框中编辑YAML代码。生成的模板将显示在屏幕上，并且还会写入到目标文件中。
 
-## 功能
+## 功能特性
 
-- 输入有效的 Access Key ID 和 Secret Access Key
-- 输入要检查的 Bucket 名称
-- 检测 Bucket 的访问权限设置
-- 显示结果：如果 Bucket 是公开访问的，将显示相应消息；否则，将显示不是公开访问的提示。
+- 提供多个预定义的YAML参数选项。
+- 显示每个参数的中文提示和示例。
+- 允许根据需求编辑YAML代码。
+- 生成的模板可直接复制粘贴或保存到目标文件。
 
-## 运行环境
+## 环境要求
 
 - Python 3.x
+- Tkinter 库
 
-## 安装依赖
+## 安装与运行
 
-```shell
-pip install tkinter baidubce
-```
+1. 克隆或下载代码库。
 
-## 如何使用
+2. 在终端或命令提示符中，导航到代码库所在的目录。
 
-1. 在根目录运行以下命令启动应用程序：
+3. 执行以下命令以安装依赖项（如果尚未安装Tkinter）：
 
-    ```shell
-    python main.py
-    ```
+   ```
+   pip install tk
+   ```
 
-2. 在应用程序界面中输入有效的 Access Key ID 和 Secret Access Key。
-3. 输入要检查的 Bucket 名称。
-4. 点击 "检测" 按钮，等待程序执行检测。
-5. 结果将在界面中显示。
+4. 运行以下命令以启动应用程序：
 
-注意：确保已提供正确有效的密钥信息以及要检查的 Bucket 名称。
+   ```
+   python yaml_generator.py
+   ```
+
+5. 程序窗口将显示在屏幕上，您可以开始使用YAML模板生成器。
+
+## 使用方法
+
+1. 在左侧的列表框中选择所需的参数。
+
+2. 在文本框中，将显示所选参数的定义、中文提示和示例信息。
+
+3. 根据需要，在文本框中编辑YAML代码。
+
+4. 点击 "生成模板" 按钮以生成模板。
+
+5. 生成的模板将显示在结果标签中，并且还会写入到名为 "target.yaml" 的目标文件中。
 
 ## 注意事项
 
-- 请确保您拥有有效的 Baidu Cloud Storage (BOS) 账户并具有足够的权限来访问和管理所选的 Bucket。
-- 使用此应用程序时，建议在安全环境中处理密钥信息，并确保不泄露给未经授权的用户。
+- 对于访问密钥（AK/SK），请确保在YAML代码中填写了正确的Access Key和Secret Key。
 
-## 参考资料
+- 如果需要添加更多参数或自定义功能，请修改源代码以满足您的需求。
 
-- [百度云存储官方文档](https://cloud.baidu.com/doc/BOS/Developer-Resource.html)
+## 示例
 
-请根据实际情况进行适当修改和补充的README文件。
+以下是一个示例，展示了一个生成EC2实例的YAML模板：
+
+```yaml
+instance_type: t3.micro
+image_id: ami-12345678
+security_group_ids:
+  - sg-abcdefg
+  - sg-hijklmn
+subnet_id: subnet-12345678
+key_name: my-key-pair
+tags:
+  Name: MyInstance
+  Environment: Production
+script_path: /path/to/script.sh
+```
+
+## 帮助与支持
+
+如果您在使用YAML模板生成器过程中遇到任何问题或有任何疑问，请联系我们的支持团队（support@example.com）获取帮助。
+
+## 贡献
+
+欢迎通过提交问题报告或拉取请求向该项目做出贡献。我们感谢您的支持！

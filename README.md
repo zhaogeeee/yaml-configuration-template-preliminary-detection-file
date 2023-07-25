@@ -74,7 +74,7 @@ script_path: /path/to/script.sh
 
 ## 帮助与支持
 
-如果您在使用YAML模板生成器过程中遇到任何问题或有任何疑问，请联系我们的支持团队（support@example.com）获取帮助。
+如果您在使用YAML模板生成器过程中遇到任何问题或有任何疑问，请留言
 
 ## 贡献
 
